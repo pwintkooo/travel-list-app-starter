@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, {useState} from "react";
 import Logo from "./Logo.js";
 import Form from "./Form.js";
 import PackingList from "./PackingList.js";
@@ -21,6 +21,10 @@ function App() {
     ));
   }
 
+  function handleClearAll() {
+    setItems([]);
+  };
+
   return (
     <div className="app">
       <Logo />
@@ -29,6 +33,7 @@ function App() {
       items={items} 
       onDeleteItem={handleDeleteItem}
       onUpdateItem={handleUpdateItem}
+      onClearAll={handleClearAll}
       />
       <Stats items={items}/>
     </div>
